@@ -1,0 +1,481 @@
+15:33:30.502 [info]  Application logger started at :nonode@nohost
+15:33:30.524 [info]  Child Mix.State of Supervisor Mix.Supervisor started
+Pid: #PID<0.100.0>
+Start Call: Mix.State.start_link([])
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+15:33:30.524 [info]  Child Mix.TasksServer of Supervisor Mix.Supervisor started
+Pid: #PID<0.101.0>
+Start Call: Mix.TasksServer.start_link([])
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+15:33:30.524 [info]  Child Mix.ProjectStack of Supervisor Mix.Supervisor started
+Pid: #PID<0.103.0>
+Start Call: Mix.ProjectStack.start_link([])
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+15:33:30.524 [info]  Application mix started at :nonode@nohost
+15:33:30.527 [info]  Application eex started at :nonode@nohost
+15:33:30.536 [info]  Child ExUnit.Server of Supervisor ExUnit.Supervisor started
+Pid: #PID<0.113.0>
+Start Call: ExUnit.Server.start_link([])
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+15:33:30.536 [info]  Child ExUnit.CaptureServer of Supervisor ExUnit.Supervisor started
+Pid: #PID<0.114.0>
+Start Call: ExUnit.CaptureServer.start_link([])
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+15:33:30.536 [info]  Child ExUnit.OnExitHandler of Supervisor ExUnit.Supervisor started
+Pid: #PID<0.116.0>
+Start Call: ExUnit.OnExitHandler.start_link([])
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+15:33:30.536 [info]  Application ex_unit started at :nonode@nohost
+15:33:30.547 [info]  Child IEx.Config of Supervisor IEx.Supervisor started
+Pid: #PID<0.124.0>
+Start Call: IEx.Config.start_link([])
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+15:33:30.548 [info]  Child IEx.Broker of Supervisor IEx.Supervisor started
+Pid: #PID<0.125.0>
+Start Call: IEx.Broker.start_link([])
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+15:33:30.548 [info]  Child IEx.Pry of Supervisor IEx.Supervisor started
+Pid: #PID<0.127.0>
+Start Call: IEx.Pry.start_link([])
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+15:33:30.548 [info]  Application iex started at :nonode@nohost
+15:33:30.550 [info]  Application procket started at :nonode@nohost
+15:33:30.555 [info]  Application message_pack started at :nonode@nohost
+15:33:30.568 [info]  Child NVim.Link of Supervisor #PID<0.139.0> (NVim.App.Sup) started
+Pid: #PID<0.140.0>
+Start Call: NVim.Link.start_link(:stdio)
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+15:33:30.571 [info]  Child NVim.Plugin.Sup of Supervisor #PID<0.139.0> (NVim.App.Sup) started
+Pid: #PID<0.142.0>
+Start Call: NVim.Plugin.Sup.start_link()
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+15:33:31.326 [info]  Application neovim started at :nonode@nohost
+16:30:59.710 [info]  Application logger started at :nonode@nohost
+16:30:59.734 [info]  Child Mix.State of Supervisor Mix.Supervisor started
+Pid: #PID<0.100.0>
+Start Call: Mix.State.start_link([])
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+16:30:59.734 [info]  Child Mix.TasksServer of Supervisor Mix.Supervisor started
+Pid: #PID<0.101.0>
+Start Call: Mix.TasksServer.start_link([])
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+16:30:59.734 [info]  Child Mix.ProjectStack of Supervisor Mix.Supervisor started
+Pid: #PID<0.103.0>
+Start Call: Mix.ProjectStack.start_link([])
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+16:30:59.734 [info]  Application mix started at :nonode@nohost
+16:30:59.739 [info]  Application eex started at :nonode@nohost
+16:30:59.749 [info]  Child ExUnit.Server of Supervisor ExUnit.Supervisor started
+Pid: #PID<0.113.0>
+Start Call: ExUnit.Server.start_link([])
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+16:30:59.749 [info]  Child ExUnit.CaptureServer of Supervisor ExUnit.Supervisor started
+Pid: #PID<0.114.0>
+Start Call: ExUnit.CaptureServer.start_link([])
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+16:30:59.749 [info]  Child ExUnit.OnExitHandler of Supervisor ExUnit.Supervisor started
+Pid: #PID<0.116.0>
+Start Call: ExUnit.OnExitHandler.start_link([])
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+16:30:59.750 [info]  Application ex_unit started at :nonode@nohost
+16:30:59.765 [info]  Child IEx.Config of Supervisor IEx.Supervisor started
+Pid: #PID<0.124.0>
+Start Call: IEx.Config.start_link([])
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+16:30:59.765 [info]  Child IEx.Broker of Supervisor IEx.Supervisor started
+Pid: #PID<0.125.0>
+Start Call: IEx.Broker.start_link([])
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+16:30:59.765 [info]  Child IEx.Pry of Supervisor IEx.Supervisor started
+Pid: #PID<0.127.0>
+Start Call: IEx.Pry.start_link([])
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+16:30:59.765 [info]  Application iex started at :nonode@nohost
+16:30:59.774 [info]  Application procket started at :nonode@nohost
+16:30:59.778 [info]  Application message_pack started at :nonode@nohost
+16:30:59.795 [info]  Child NVim.Link of Supervisor #PID<0.139.0> (NVim.App.Sup) started
+Pid: #PID<0.140.0>
+Start Call: NVim.Link.start_link(:stdio)
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+16:30:59.797 [info]  Child NVim.Plugin.Sup of Supervisor #PID<0.139.0> (NVim.App.Sup) started
+Pid: #PID<0.142.0>
+Start Call: NVim.Plugin.Sup.start_link()
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+16:31:00.543 [info]  Application neovim started at :nonode@nohost
+16:33:16.700 [info]  Application logger started at :nonode@nohost
+16:33:16.731 [info]  Child Mix.State of Supervisor Mix.Supervisor started
+Pid: #PID<0.100.0>
+Start Call: Mix.State.start_link([])
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+16:33:16.731 [info]  Child Mix.TasksServer of Supervisor Mix.Supervisor started
+Pid: #PID<0.101.0>
+Start Call: Mix.TasksServer.start_link([])
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+16:33:16.731 [info]  Child Mix.ProjectStack of Supervisor Mix.Supervisor started
+Pid: #PID<0.103.0>
+Start Call: Mix.ProjectStack.start_link([])
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+16:33:16.731 [info]  Application mix started at :nonode@nohost
+16:33:16.736 [info]  Application eex started at :nonode@nohost
+16:33:16.753 [info]  Child ExUnit.Server of Supervisor ExUnit.Supervisor started
+Pid: #PID<0.113.0>
+Start Call: ExUnit.Server.start_link([])
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+16:33:16.754 [info]  Child ExUnit.CaptureServer of Supervisor ExUnit.Supervisor started
+Pid: #PID<0.114.0>
+Start Call: ExUnit.CaptureServer.start_link([])
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+16:33:16.755 [info]  Child ExUnit.OnExitHandler of Supervisor ExUnit.Supervisor started
+Pid: #PID<0.116.0>
+Start Call: ExUnit.OnExitHandler.start_link([])
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+16:33:16.755 [info]  Application ex_unit started at :nonode@nohost
+16:33:16.774 [info]  Child IEx.Config of Supervisor IEx.Supervisor started
+Pid: #PID<0.124.0>
+Start Call: IEx.Config.start_link([])
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+16:33:16.774 [info]  Child IEx.Broker of Supervisor IEx.Supervisor started
+Pid: #PID<0.125.0>
+Start Call: IEx.Broker.start_link([])
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+16:33:16.774 [info]  Child IEx.Pry of Supervisor IEx.Supervisor started
+Pid: #PID<0.127.0>
+Start Call: IEx.Pry.start_link([])
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+16:33:16.774 [info]  Application iex started at :nonode@nohost
+16:33:16.779 [info]  Application procket started at :nonode@nohost
+16:33:16.784 [info]  Application message_pack started at :nonode@nohost
+16:33:16.800 [info]  Child NVim.Link of Supervisor #PID<0.139.0> (NVim.App.Sup) started
+Pid: #PID<0.140.0>
+Start Call: NVim.Link.start_link(:stdio)
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+16:33:16.807 [info]  Child NVim.Plugin.Sup of Supervisor #PID<0.139.0> (NVim.App.Sup) started
+Pid: #PID<0.142.0>
+Start Call: NVim.Plugin.Sup.start_link()
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+16:33:18.017 [info]  Application neovim started at :nonode@nohost
+16:34:44.618 [info]  Application logger started at :nonode@nohost
+16:34:44.645 [info]  Child Mix.State of Supervisor Mix.Supervisor started
+Pid: #PID<0.100.0>
+Start Call: Mix.State.start_link([])
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+16:34:44.645 [info]  Child Mix.TasksServer of Supervisor Mix.Supervisor started
+Pid: #PID<0.101.0>
+Start Call: Mix.TasksServer.start_link([])
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+16:34:44.646 [info]  Child Mix.ProjectStack of Supervisor Mix.Supervisor started
+Pid: #PID<0.103.0>
+Start Call: Mix.ProjectStack.start_link([])
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+16:34:44.646 [info]  Application mix started at :nonode@nohost
+16:34:44.649 [info]  Application eex started at :nonode@nohost
+16:34:44.663 [info]  Child ExUnit.Server of Supervisor ExUnit.Supervisor started
+Pid: #PID<0.113.0>
+Start Call: ExUnit.Server.start_link([])
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+16:34:44.663 [info]  Child ExUnit.CaptureServer of Supervisor ExUnit.Supervisor started
+Pid: #PID<0.114.0>
+Start Call: ExUnit.CaptureServer.start_link([])
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+16:34:44.663 [info]  Child ExUnit.OnExitHandler of Supervisor ExUnit.Supervisor started
+Pid: #PID<0.116.0>
+Start Call: ExUnit.OnExitHandler.start_link([])
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+16:34:44.663 [info]  Application ex_unit started at :nonode@nohost
+16:34:44.678 [info]  Child IEx.Config of Supervisor IEx.Supervisor started
+Pid: #PID<0.124.0>
+Start Call: IEx.Config.start_link([])
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+16:34:44.678 [info]  Child IEx.Broker of Supervisor IEx.Supervisor started
+Pid: #PID<0.125.0>
+Start Call: IEx.Broker.start_link([])
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+16:34:44.678 [info]  Child IEx.Pry of Supervisor IEx.Supervisor started
+Pid: #PID<0.127.0>
+Start Call: IEx.Pry.start_link([])
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+16:34:44.678 [info]  Application iex started at :nonode@nohost
+16:34:44.682 [info]  Application procket started at :nonode@nohost
+16:34:44.685 [info]  Application message_pack started at :nonode@nohost
+16:34:44.700 [info]  Child NVim.Link of Supervisor #PID<0.139.0> (NVim.App.Sup) started
+Pid: #PID<0.140.0>
+Start Call: NVim.Link.start_link(:stdio)
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+16:34:44.703 [info]  Child NVim.Plugin.Sup of Supervisor #PID<0.139.0> (NVim.App.Sup) started
+Pid: #PID<0.142.0>
+Start Call: NVim.Plugin.Sup.start_link()
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+16:34:45.349 [info]  Child Example of Supervisor NVim.Plugin.Sup started
+Pid: #PID<0.151.0>
+Start Call: Example.start_link(%{})
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+16:36:04.569 [info]  Application logger started at :nonode@nohost
+16:36:04.647 [info]  Child Mix.State of Supervisor Mix.Supervisor started
+Pid: #PID<0.100.0>
+Start Call: Mix.State.start_link([])
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+16:36:04.648 [info]  Child Mix.TasksServer of Supervisor Mix.Supervisor started
+Pid: #PID<0.101.0>
+Start Call: Mix.TasksServer.start_link([])
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+16:36:04.648 [info]  Child Mix.ProjectStack of Supervisor Mix.Supervisor started
+Pid: #PID<0.103.0>
+Start Call: Mix.ProjectStack.start_link([])
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+16:36:04.648 [info]  Application mix started at :nonode@nohost
+16:36:04.655 [info]  Application eex started at :nonode@nohost
+16:36:04.701 [info]  Child ExUnit.Server of Supervisor ExUnit.Supervisor started
+Pid: #PID<0.113.0>
+Start Call: ExUnit.Server.start_link([])
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+16:36:04.701 [info]  Child ExUnit.CaptureServer of Supervisor ExUnit.Supervisor started
+Pid: #PID<0.114.0>
+Start Call: ExUnit.CaptureServer.start_link([])
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+16:36:04.702 [info]  Child ExUnit.OnExitHandler of Supervisor ExUnit.Supervisor started
+Pid: #PID<0.116.0>
+Start Call: ExUnit.OnExitHandler.start_link([])
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+16:36:04.702 [info]  Application ex_unit started at :nonode@nohost
+16:36:04.752 [info]  Child IEx.Config of Supervisor IEx.Supervisor started
+Pid: #PID<0.124.0>
+Start Call: IEx.Config.start_link([])
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+16:36:04.752 [info]  Child IEx.Broker of Supervisor IEx.Supervisor started
+Pid: #PID<0.125.0>
+Start Call: IEx.Broker.start_link([])
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+16:36:04.752 [info]  Child IEx.Pry of Supervisor IEx.Supervisor started
+Pid: #PID<0.127.0>
+Start Call: IEx.Pry.start_link([])
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+16:36:04.752 [info]  Application iex started at :nonode@nohost
+16:36:04.777 [info]  Application procket started at :nonode@nohost
+16:36:04.800 [info]  Application message_pack started at :nonode@nohost
+16:36:04.853 [info]  Child NVim.Link of Supervisor #PID<0.139.0> (NVim.App.Sup) started
+Pid: #PID<0.140.0>
+Start Call: NVim.Link.start_link(:stdio)
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+16:36:04.863 [info]  Child NVim.Plugin.Sup of Supervisor #PID<0.139.0> (NVim.App.Sup) started
+Pid: #PID<0.142.0>
+Start Call: NVim.Plugin.Sup.start_link()
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+16:36:29.759 [info]  Application logger started at :nonode@nohost
+16:36:29.785 [info]  Child Mix.State of Supervisor Mix.Supervisor started
+Pid: #PID<0.100.0>
+Start Call: Mix.State.start_link([])
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+16:36:29.786 [info]  Child Mix.TasksServer of Supervisor Mix.Supervisor started
+Pid: #PID<0.101.0>
+Start Call: Mix.TasksServer.start_link([])
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+16:36:29.786 [info]  Child Mix.ProjectStack of Supervisor Mix.Supervisor started
+Pid: #PID<0.103.0>
+Start Call: Mix.ProjectStack.start_link([])
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+16:36:29.787 [info]  Application mix started at :nonode@nohost
+16:36:29.790 [info]  Application eex started at :nonode@nohost
+16:36:29.804 [info]  Child ExUnit.Server of Supervisor ExUnit.Supervisor started
+Pid: #PID<0.113.0>
+Start Call: ExUnit.Server.start_link([])
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+16:36:29.805 [info]  Child ExUnit.CaptureServer of Supervisor ExUnit.Supervisor started
+Pid: #PID<0.114.0>
+Start Call: ExUnit.CaptureServer.start_link([])
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+16:36:29.805 [info]  Child ExUnit.OnExitHandler of Supervisor ExUnit.Supervisor started
+Pid: #PID<0.116.0>
+Start Call: ExUnit.OnExitHandler.start_link([])
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+16:36:29.805 [info]  Application ex_unit started at :nonode@nohost
+16:36:29.822 [info]  Child IEx.Config of Supervisor IEx.Supervisor started
+Pid: #PID<0.124.0>
+Start Call: IEx.Config.start_link([])
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+16:36:29.822 [info]  Child IEx.Broker of Supervisor IEx.Supervisor started
+Pid: #PID<0.125.0>
+Start Call: IEx.Broker.start_link([])
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+16:36:29.823 [info]  Child IEx.Pry of Supervisor IEx.Supervisor started
+Pid: #PID<0.127.0>
+Start Call: IEx.Pry.start_link([])
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+16:36:29.823 [info]  Application iex started at :nonode@nohost
+16:36:29.827 [info]  Application procket started at :nonode@nohost
+16:36:29.830 [info]  Application message_pack started at :nonode@nohost
+16:36:29.847 [info]  Child NVim.Link of Supervisor #PID<0.139.0> (NVim.App.Sup) started
+Pid: #PID<0.140.0>
+Start Call: NVim.Link.start_link(:stdio)
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+16:36:29.850 [info]  Child NVim.Plugin.Sup of Supervisor #PID<0.139.0> (NVim.App.Sup) started
+Pid: #PID<0.142.0>
+Start Call: NVim.Plugin.Sup.start_link()
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+16:36:34.864 [error] Child NVim.App.Sup of Supervisor #PID<0.139.0> (NVim.App.Sup) failed to start
+** (exit) exited in: GenServer.call(NVim.Link, {"vim_get_api_info", []}, 5000)
+    ** (EXIT) time out
+Start Call: NVim.App.Sup.gen_api()
+Restart: :temporary
+Shutdown: 5000
+Type: :worker
+16:36:34.875 [error] Process #PID<0.136.0> terminating
+** (exit) exited in: NVim.App.start(:normal, [])
+    ** (EXIT) shutdown: failed to start child: NVim.App.Sup
+        ** (EXIT) exited in: GenServer.call(NVim.Link, {"vim_get_api_info", []}, 5000)
+            ** (EXIT) time out
+    (kernel 7.0) application_master.erl:138: :application_master.init/4
+    (stdlib 3.13) proc_lib.erl:226: :proc_lib.init_p_do_apply/3
+Initial Call: :application_master.init/4
+Ancestors: [#PID<0.135.0>]
+Message Queue Length: 1
+Messages: [{:EXIT, #PID<0.137.0>, :normal}]
+Links: [#PID<0.135.0>, #PID<0.44.0>]
+Dictionary: []
+Trapping Exits: true
+Status: :running
+Heap Size: 376
+Stack Size: 28
+Reductions: 214
+16:36:34.876 [info]  Application neovim exited: NVim.App.start(:normal, []) returned an error: shutdown: failed to start child: NVim.App.Sup
+    ** (EXIT) exited in: GenServer.call(NVim.Link, {"vim_get_api_info", []}, 5000)
+        ** (EXIT) time out
+16:36:34.876 [info]  Application message_pack exited: :stopped
+16:36:34.876 [info]  Application procket exited: :stopped
+16:36:34.879 [info]  Application iex exited: :stopped
+16:36:34.883 [info]  Application ex_unit exited: :stopped
+16:36:34.884 [info]  Application eex exited: :stopped
+16:36:34.887 [info]  Application mix exited: :stopped

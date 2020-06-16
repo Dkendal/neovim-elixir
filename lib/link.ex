@@ -21,18 +21,25 @@ defmodule NVim.Link do
        port: port,
        buf: "",
        req_id: 0,
-       reqs: HashDict.new(),
+       reqs: %{},
        plugins: NVim.Host.init_plugins()
      }}
   end
 
   def handle_call({func, args}, from, %{port: port} = state) do
     req_id = state.req_id + 1
+
+    require Logger
+    Logger.debug("[call] #{inspect(func)} #{inspect(args)}")
+
     Port.command(port, MessagePack.pack!([@msg_req, req_id, func, args], ext: NVim.Ext))
-    {:noreply, %{state | req_id: req_id, reqs: Dict.put(state.reqs, req_id, from)}}
+    {:noreply, %{state | req_id: req_id, reqs: Map.put(state.reqs, req_id, from)}}
   end
 
   def handle_cast({:register_plugins, plugins}, state) do
+    require Logger
+    Logger.debug("register plugins #{inspect(plugins)}")
+
     {:noreply, %{state | plugins: plugins}}
   end
 
@@ -62,7 +69,7 @@ defmodule NVim.Link do
           reply = if err, do: {:error, err}, else: {:ok, resp}
 
           reqs =
-            case Dict.pop(reqs, req_id) do
+            case Map.pop(reqs, req_id) do
               {nil, _} ->
                 reqs
 
@@ -145,6 +152,7 @@ defmodule NVim.Link do
   end
 
   defp open(:stdio), do: {0, 1}
+
   defp open({:tcp, ip, port}), do: open({parse_ip(ip), port})
 
   defp open({{:ipv4, ip}, port}) do

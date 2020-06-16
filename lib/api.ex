@@ -32,30 +32,37 @@ defmodule NVim.Api do
   def vim_type("Integer"), do: {:integer, [], Elixir}
   def vim_type("Boolean"), do: {:boolean, [], Elixir}
   def vim_type("Dictionary"), do: {:map, [], Elixir}
-  def vim_type("Array"), do: {:list, [], Elixir}
+  def vim_type("Array"), do: quote(do: list())
   def vim_type("String"), do: quote(do: String.t())
   def vim_type("Object"), do: {:any, [], Elixir}
-  def vim_type("void"), do: {:none, [], Elixir}
+  def vim_type("void"), do: {nil, [], Elixir}
 
   def vim_type("ArrayOf(" <> term) do
     tokens =
       term
       |> String.split([",", ")", " "])
-      |> Enum.filter(&is_nil/1)
+      |> Enum.reject(fn
+        "" -> true
+        _ -> false
+      end)
 
+    IO.inspect(term)
+    IO.inspect(tokens)
     vim_type(:array, tokens)
   end
 
   def vim_type(:array, []), do: :list
 
-  def vim_type(:array, [type, ""]) do
-    inner_type = vim_type(type)
-    quote(do: list(unquote(inner_type)))
+  def vim_type(:array, [type]) do
+    type = vim_type(type)
+    quote(do: list(unquote(type)))
   end
 
   def vim_type(:array, [type, size]) do
-    inner_type = vim_type(type)
-    for _ <- 0..size, do: inner_type
+    type = vim_type(type)
+    size = String.to_integer(size)
+    # TODO convert to tuple
+    quote do: { unquote_splicing(for _ <- 0..size, do: type) }
   end
 
   def generate_neovim(%{"functions" => fns, "types" => types}) do
@@ -64,46 +71,59 @@ defmodule NVim.Api do
       @opaque nvim_tab_page :: integer()
       @opaque nvim_window :: integer()
 
-      Enum.each(fns, fn %{"name" => name, "parameters" => params} = func ->
-        fnparams =
-          for [type, pname] <- params do
+      Enum.each(fns, fn %{"name" => name, "parameters" => params, "since" => since} = func ->
+
+        args =
+          for [type, name] <- params do
+            name = {NVim.Api.map_vimname(:"#{name}"), [], Elixir}
+            type = NVim.Api.vim_type(type)
+            {type, name}
+          end
+
+        fn_params = for { _type, name } <- args, do: name
+
+        call_args = Enum.map(args, fn
+          # Convert lists to tuples where appropriate
+          {{ :{}, _, _ }, name} ->
+            quote(do: List.to_tuple(unquote(name)))
+
+          {t, name} ->
+            name
+        end)
+
+        spec_args =
+          for {type, name} <- args do
             quote do
-              var!(unquote({NVim.Api.map_vimname(:"#{pname}"), [], Elixir}))
+              unquote(name) :: unquote(type)
             end
           end
 
-        # Generate arguments for the function spec
-        spec_args =
-          for [type, name] <- params do
-            quote(do: unquote({NVim.Api.map_vimname(:"#{name}"), [], Elixir}) :: unquote(NVim.Api.vim_type(type)))
-          end
+        success_type = NVim.Api.vim_type(func["return_type"])
 
-        spec_return_value = NVim.Api.vim_type(func["return_type"])
+        return_type = {:ok, success_type}
 
         spec =
           quote do
-            @spec unquote(:"#{name}")(unquote_splicing(spec_args)) :: unquote(spec_return_value)
+            @spec unquote(:"#{name}")(unquote_splicing(spec_args)) :: unquote(return_type)
           end
 
-        @doc """
-          Parameters : #{inspect(params)}
-
-          Return : #{inspect(func["return_type"])}
-
+        doc_string = """
           This function can #{if func["can_fail"] != true, do: "not "}fail
 
           This function can #{if func["deferred"] != true, do: "not "}be deferred
         """
-        Module.eval_quoted(
-          NVim,
+
+        content =
           quote do
             unquote(spec)
-
-            def unquote(:"#{name}")(unquote_splicing(fnparams)) do
-              GenServer.call(NVim.Link, {unquote("#{name}"), unquote(fnparams)}, :infinity)
+            @doc unquote(doc_string)
+            @doc since: unquote(to_string(since))
+            def unquote(:"#{name}")(unquote_splicing(fn_params)) do
+              GenServer.call(NVim.Link, {unquote("#{name}"), unquote(call_args)}, :infinity)
             end
           end
-        )
+
+        Module.eval_quoted(NVim, content)
       end)
     end
 
@@ -120,7 +140,8 @@ defmodule NVim.Api do
         Module.eval_quoted(
           NVim.Ext,
           quote do
-            def pack(%unquote(Module.concat(["NVim", name])){content: bin}), do: {:ok, {unquote(id), bin}}
+            def pack(%unquote(Module.concat(["NVim", name])){content: bin}),
+              do: {:ok, {unquote(id), bin}}
           end
         )
       end)
@@ -129,7 +150,8 @@ defmodule NVim.Api do
         Module.eval_quoted(
           NVim.Ext,
           quote do
-            def unpack(unquote(id), bin), do: {:ok, %unquote(Module.concat(["NVim", name])){content: bin}}
+            def unpack(unquote(id), bin),
+              do: {:ok, %unquote(Module.concat(["NVim", name])){content: bin}}
           end
         )
       end)
