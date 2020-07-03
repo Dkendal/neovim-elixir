@@ -1,0 +1,5 @@
+filetype off
+" set runtimepath+=~/.nvim/plugged/vader.vim
+set runtimepath+=./vim-elixir-host/
+filetype plugin indent on
+syntax enable

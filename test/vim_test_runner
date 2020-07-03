@@ -1,0 +1,6 @@
+#!/bin/sh
+set -eu
+
+vim -Nu ./test/vimrc --headless \
+  -c UpdateRemotePlugins \
+  -c q \
